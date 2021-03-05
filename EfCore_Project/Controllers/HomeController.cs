@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using EfCore_Project.Models;
 
 namespace EfCore_Project.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly  ShopContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ShopContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
+           var product = new Product("iphone 11",20000000);
+            _context.Products.Add(product);
+            _context.SaveChanges();
             return View();
         }
 

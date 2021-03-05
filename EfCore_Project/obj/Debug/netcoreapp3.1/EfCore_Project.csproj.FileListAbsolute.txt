@@ -61,3 +61,17 @@ D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrame
 D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\EfCore_Project.deps.json
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\EfCore_Project.runtimeconfig.json
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\EfCore_Project.runtimeconfig.dev.json
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\EfCore_Project.dll
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\EfCore_Project.pdb
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\EfCore_Project.Views.dll
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\EfCore_Project.Views.pdb
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\obj\Debug\netcoreapp3.1\EfCore_Project.csproj.CoreCompileInputs.cache
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\obj\Debug\netcoreapp3.1\EfCore_Project.MvcApplicationPartsAssemblyInfo.cache
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\obj\Debug\netcoreapp3.1\EfCore_Project.Views.pdb
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\obj\Debug\netcoreapp3.1\EfCore_Project.dll
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\obj\Debug\netcoreapp3.1\EfCore_Project.pdb
+D:\Danial - Davood\Design website and programing\Asp.netCore\Project\EntityFrameWorkCore\EfCore_Project\obj\Debug\netcoreapp3.1\EfCore_Project.genruntimeconfig.cache
