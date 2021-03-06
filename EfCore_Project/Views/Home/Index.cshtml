@@ -1,8 +1,32 @@
-﻿@{
+﻿@model IEnumerable<Product>
+@{
     ViewData["Title"] = "Home Page";
 }
+<h3>تعداد محصولات ما : @ViewData["count"]</h3>
+<table  class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>UnitPrice</th>
+            <th>IsInstock</th>
+            <th>CreationDate</th>
+           
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th>@item.Id</th>
+            <th>@item.Name</th>
+            <th>@item.UnitPrice</th>
+            <th>@item.IsInStock</th>
+            <th>@item.CreateDate</th>
+        </tr>
+                }
+            
+        </tbody>
+</table>

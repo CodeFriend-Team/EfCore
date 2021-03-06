@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using EfCore_Project.Models;
+using System.Linq;
 
 namespace EfCore_Project.Controllers
 {
@@ -15,10 +16,16 @@ namespace EfCore_Project.Controllers
 
         public IActionResult Index()
         {
-           var product = new Product("iphone 11",20000000);
-            _context.Products.Add(product);
+            //var product = new Product("Lenovo LC3",350000);
+            // var product2 = new Product("Asus book", 200000);
+            ViewData["count"] = _context.Products.Count();
+            var products = _context.Products.ToList();
+            // _context.Products.Add(product);
+            // _context.Products.Add(product2);
+            // _context.Products.Add(product3);
             _context.SaveChanges();
-            return View();
+            
+            return View(products);
         }
 
         public IActionResult Privacy()
