@@ -12,12 +12,17 @@ namespace EfCore_Project.Models
         public double UnitPrice { get; set; }
         public DateTime CreateDate { get; set; }
         public bool IsInStock { get; set; }
+        public bool IsDeleted { get; set; }
         public Product(string name, double unitPrice)
         {
             Name = name;
             IsInStock = true;
             UnitPrice = unitPrice;
             CreateDate = DateTime.Now;
+        }
+        public void Restore()
+        {
+            IsDeleted = false;  
         }
     }
 }

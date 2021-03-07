@@ -1,4 +1,5 @@
-﻿using EfCore_Project.Models;
+﻿using EfCore_Project.Mapping;
+using EfCore_Project.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EfCore_Project
@@ -10,5 +11,11 @@ namespace EfCore_Project
         {
 
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new ProductMapping());
+            base.OnModelCreating(modelBuilder);
+        }
+  
     }
 }
