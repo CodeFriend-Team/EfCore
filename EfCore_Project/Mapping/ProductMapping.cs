@@ -16,6 +16,7 @@ namespace EfCore_Project.Mapping
             builder.Property(x => x.Name).HasMaxLength(150);
             builder.Property(x => x.IsDeleted).HasColumnName("IsRemoved");
             builder.Property(x => x.IsInStock).HasColumnName("IsAvalibleInStoke");
+            builder.HasOne(p => p.ProductCategory).WithMany(p => p.Product).HasForeignKey(p=>p.CategoryId);
         }
     }
 }

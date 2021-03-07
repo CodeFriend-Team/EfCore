@@ -13,6 +13,10 @@ namespace EfCore_Project.Models
         public DateTime CreateDate { get; set; }
         public bool IsInStock { get; set; }
         public bool IsDeleted { get; set; }
+          public int CategoryId { get; set; }
+        public ProductCategory ProductCategory { get; set; }
+
+
         public Product(string name, double unitPrice)
         {
             Name = name;
@@ -22,7 +26,7 @@ namespace EfCore_Project.Models
         }
         public void Restore()
         {
-            IsDeleted = false;  
+            IsDeleted = false;
         }
     }
 }
