@@ -3,6 +3,9 @@
     ViewData["Title"] = "Home Page";
 }
 <h3>تعداد محصولات ما : @ViewData["count"]</h3>
+<a asp-action="recyclebeen" asp-controller="home" class="btn-outline-warning btn">
+   recycle been
+</a>
 <table  class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -11,7 +14,7 @@
             <th>UnitPrice</th>
             <th>IsInstock</th>
             <th>CreationDate</th>
-           
+           <th>command</th>
 
         </tr>
     </thead>
@@ -19,14 +22,32 @@
 
         @foreach (var item in Model)
         {
-        <tr>
+        <tr class="Product_@item.Id">
             <th>@item.Id</th>
             <th>@item.Name</th>
             <th>@item.UnitPrice</th>
             <th>@item.IsInStock</th>
             <th>@item.CreateDate</th>
+            <th>
+            <a class="btn btn-primary" asp-controller="Home" asp-action="details" asp-route-id="@item.Id">Details</a>
+            <a class="btn btn-danger" onclick="Delete(@item.Id)">Delete</a>
+            </th>
         </tr>
-                }
+          }
             
         </tbody>
 </table>
+@section Scripts{ 
+    <script>
+        function Delete(id) {
+            $.ajax({
+                url: "/home/Delete/" + id,
+                type: "delete"
+            }).done(function () {
+                $(".Product_" + id).addClass("btn-danger");
+                $(".Product_" + id).hide('slow');
+               
+            });
+        }
+    </script>
+}

@@ -23,6 +23,7 @@ namespace EfCore_Project.Models
             IsInStock = true;
             UnitPrice = unitPrice;
             CreateDate = DateTime.Now;
+
         }
         public void Restore()
         {

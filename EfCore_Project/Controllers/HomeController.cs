@@ -4,6 +4,7 @@ using EfCore_Project.Models;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 
 namespace EfCore_Project.Controllers
 {
@@ -19,17 +20,22 @@ namespace EfCore_Project.Controllers
 
         public IActionResult Index()
         {
-            //var product = new Product("Lenovo LC3",350000);
-            // var product2 = new Product("Asus book", 200000);
-            ViewData["count"] = _context.Products.Count();
-            // _context.Products.Add(product);
-            // _context.Products.Add(product2);
-            // _context.Products.Add(product3);
-            var i=_context.Products.FirstOrDefault(x=>x.Id==6);
+            //var product1 = new Product("Lenovo LC3", 350000);
+            //var product2 = new Product("Asus book", 200000);
+            //ViewData["count"] = _context.Products.Count();
+            //_context.Products.Add(product1);
+            //_context.Products.Add(product2);
+            //// _context.Products.Add(product3);
+            //var i=_context.Products.FirstOrDefault(x=>x.Id==6);
             //i.IsDeleted = true;
             //i.Restore();
             //_context.Remove(i);
-            var umy = _context.Entry(i).State;
+
+            //var product2 = _context.Products.Find(2);
+            //product2.Restore();
+            //var product4 = _context.Products.Find(3);
+            //product4.Restore();
+
             _context.SaveChanges();
             var products = _context.Products.Where(x => x.IsDeleted == false).ToList();
             var product = DisplayStates(_context.ChangeTracker.Entries());
@@ -38,7 +44,31 @@ namespace EfCore_Project.Controllers
             return View(products);
             
         }
+        public IActionResult details(int id)
+        {
+            var product = _context.Products.Find(id);
+            return View(product);
+        }
+        public void Delete(int id)
+        {
 
+            var product = _context.Products.Find(id);
+            product.IsDeleted = true;
+            _context.SaveChanges();
+        }
+        public IActionResult RecycleBeen()
+        {
+            var product = _context.Products.Where(p=>p.IsDeleted == true).ToList();
+            return View(product);
+            
+        }
+        public void Restore(int id)
+        {
+
+            var product = _context.Products.Find(id);
+            product.Restore();
+            _context.SaveChanges();
+        }
         private object DisplayStates(IEnumerable<EntityEntry> enumerable)
         {
             List<string> result = new List<string>();

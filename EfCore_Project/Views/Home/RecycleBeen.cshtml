@@ -1,0 +1,86 @@
+﻿@model IEnumerable<EfCore_Project.Models.Product>
+
+@{
+    ViewData["Title"] = "RecycleBeen";
+}
+
+<h1>RecycleBeen</h1>
+
+<a asp-action="index" asp-controller="home" class="btn-outline-primary btn">
+   back to list
+</a>
+<div class="no-content">
+   
+</div>
+<table class="table table-bordered umy">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                price
+            </th>
+            <th>
+                create date
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsInStock)
+            </th>
+
+            <th>
+                category
+            </th>
+            <th>commands</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="Product_@item.Id">
+                <td>
+                    name
+                </td>
+                <td>
+                    price
+                </td>
+                <td>
+                    create date
+                </td>
+                <td>
+                    is in stock
+                </td>
+
+                <td>
+                    category
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Home" asp-action="details" asp-route-id="@item.Id">Details</a>
+                    <a class="btn btn-warning" onclick="Restore(@item.Id)">Restore</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts{
+    <script>
+        var trlenght = $(".umy tr").length;
+        function Restore(id) {
+
+            $.ajax({
+                url: "/home/Restore/" + id,
+                type: "put"
+            }).done(function () {
+                if (trlenght == 2) {
+                    $(".umy").hide();
+                    $(".no-content").html(' <p class="text-center alert-info p-5">There is no content in the recycle been!</p>');
+                }
+                $(".Product_" + id).hide('fast');
+                trlenght--;
+               
+            });
+        }
+    </script>
+}
